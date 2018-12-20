@@ -24,7 +24,7 @@ define("GENS", 50000000000);
 $minPot         = -2;
 $maxPot = count($current_generation)+2;
 
-
+$newSum = $prevSum = array_sum($pots_with_plants);
 for($i = 1; $i <= GENS; $i++) {
 	$next_pots_with_plants = [];
 	for($j=$minPot;$j<=$maxPot;$j++){
@@ -36,6 +36,10 @@ for($i = 1; $i <= GENS; $i++) {
 	$minPot -= 2;
 	$maxPot += 2;
 
+	$prevSum = $newSum;
+	$newSum = array_sum($pots_with_plants);
+
+	echo "After Generation {$i}: ".$newSum." (".($newSum-$prevSum).")".PHP_EOL;
 }
 
 echo "Sum: " . array_sum($pots_with_plants);

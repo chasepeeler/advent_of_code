@@ -1,3 +1,3 @@
 <?php
 
-$input = file(__DIR__."/../input.txt");
+include(__DIR__."../puzzle1/solution.php");
