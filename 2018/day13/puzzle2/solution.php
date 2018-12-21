@@ -100,8 +100,9 @@ do {
 			return !$c->collided;
 		}
 	);
-	echo count($carsAlive) . ' out of ' . count($cars) . ' still alive after tick ' . $tick . PHP_EOL;
-
+	if($tick % 100 == 0) {
+		echo count($carsAlive) . ' out of ' . count($cars) . ' still alive after tick ' . $tick . PHP_EOL;
+	}
 	//	printTrack($track,$cars);
 	//	echo "----------------------".PHP_EOL;
 
